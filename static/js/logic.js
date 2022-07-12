@@ -13,13 +13,13 @@ function createFeatures(earthquakeData) {
 
   function changeColor(features) {
     if (features.properties.mag > 7)
-    return 'blue'
+    return 'red'
     else if (features.properties.mag > 5)
     return 'orange'
     else if (features.properties.mag > 2.5)
-    return 'purple'
+    return 'green'
     else 
-    return 'red'
+    return 'yellow'
   };
 
   function changeSize(features) {
@@ -94,7 +94,7 @@ function createMap(earthquakes) {
 
     let div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 2.5, 5, 7],
-        colors = ['red', 'purple', 'orange', 'blue'];
+        colors = ['yellow', 'green', 'orange', 'red'];
 
     for (let i = 0; i < grades.length; i++) {
         div.innerHTML +=
