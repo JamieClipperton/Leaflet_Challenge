@@ -66,11 +66,13 @@ function createMap(earthquakes) {
     "Topographic Map": topo
   };
 
-  // Create an overlay object to hold our overlay.
-  var overlayMaps = {
-    Earthquakes: earthquakes
+  let tectonicplates = new L.LayerGroup()
+  let overlayMaps = {
+    Earthquakes: earthquakes,
+    'Tectonic Plates': tectonicplates
   };
 
+  
   // Create our map, giving it the streetmap and earthquakes layers to display on load.
   var myMap = L.map("map", {
     center: [
